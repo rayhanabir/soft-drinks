@@ -4,7 +4,8 @@ const loadJuice = async () => {
     const searchText = searchField.value;
     searchField.value = '';
     if(searchText ==''){
-        alert(' please input something')
+      document.getElementById('empty-search').style.display = 'block'
+        toggleSpinner('none');
     }
     else{
         const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchText}`
@@ -13,17 +14,13 @@ const loadJuice = async () => {
         const data = await res.json()
         if(data.drinks){
             showJuice(data.drinks)
-            console.log(data.drinks);
+            document.getElementById('empty-search').style.display = 'none'
         }
         else{
            const element =  document.querySelector('#warning-text');
            element.style.display = 'block'
+           toggleSpinner('none')
         }
-       
-
-        // fetch(url)
-        // .then(res => res.json())
-        // .then(data => showJuice(data.drinks))
        
     } 
 };
@@ -34,16 +31,11 @@ const toggleSpinner = displayStyle =>{
     document.getElementById('spinner').style.display = displayStyle;
 }
 
-//hide privius data
-
-const toggleSearchResult = displayStyle =>{
-    document.getElementById('card-container').style.display = displayStyle;
-}
     //show juice in ui
 const showJuice = (juices) =>{
 
         toggleSpinner('block')
-        
+      
         const cardContainer = document.getElementById('card-container');
         juices.forEach( juice =>{
             const div = document.createElement('div');
@@ -58,11 +50,8 @@ const showJuice = (juices) =>{
             `;
             cardContainer.appendChild(div)
             toggleSpinner('none')
-            
+           
         })
-   
-    
-  
 }
 
 const loadDetails = async id =>{
@@ -70,9 +59,6 @@ const loadDetails = async id =>{
     const res = await fetch(url)
     const data = await res.json()
     showDetails(data.drinks[0])
-    // fetch(url)
-    // .then(res => res.json())
-    // .then(data => showDetails(data.drinks[0]))
 };
 
 //display single juice details
