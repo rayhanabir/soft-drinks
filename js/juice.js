@@ -38,7 +38,7 @@ const toggleSpinner = displayStyle =>{
 const toggleSearchResult = displayStyle =>{
     document.getElementById('card-container').style.display = displayStyle;
 }
-    //show huic in ui
+    //show juice in ui
 const showJuice = (juices) =>{
 
         toggleSpinner('block')
