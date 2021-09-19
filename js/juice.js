@@ -16,7 +16,8 @@ const loadJuice = async () => {
             console.log(data.drinks);
         }
         else{
-            document.getElementById('warning-text').style.display = 'block !important'
+           const element =  document.querySelector('#warning-text');
+           element.style.display = 'block'
         }
        
 
