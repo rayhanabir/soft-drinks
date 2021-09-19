@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <style>
+        #card-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 7px;
+        }
+        #juice-details .card{
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        #spinner{
+        display: none;
+            
+        }
+        #warning-text{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center mt-4 text-danger ">Juice Khaba Vaiya ?</h2>
+
+    <!-- search filed area -->
+
+    <div class="w-50 mx-auto d-flex">
+        <input id="search-field" class="form-control" type="text" placeholder="search your juice">
+         <button onclick="loadJuice()" id="search-btn" class="btn btn-primary">Search</button>
+    </div>
+
+      <!-- spinnere -->
+      <div id="spinner" class="spinner-grow container" role="status">
+        
+    </div>
+
+    <!-- single juice details -->
+
+    <section class="container">
+        <div id="juice-details">
+            
+        </div>
+    </section>
+
+    <!-- search result  -->
+
+    <section class="container">
+       <div id="card-container" class="mt-4">
+
+       </div>
+
+       <div id="warning-text">
+           <p class="text-center text-danger">didn't match your search result</p>
+       </div>
+     
+    </section>
+   
+
+    <script src="js/juice.js"></script>
+</body>
+</html>

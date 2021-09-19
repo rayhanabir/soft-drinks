@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sports.css">
+
+</head>
+<body>
+    <h1 class="text-center mt-4 bg-danger text-white p-3">Find Your Club & Favourite Player</h1>    
+
+    <!-- search area -->
+
+    <div class="input-group mb-3 mx-auto w-50 mt-4">
+        <input id="search-field" type="text" class="form-control" placeholder="Search Your Club" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="loadClubName()" id="search-btn" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+
+    <!-- spinner add -->
+
+   <div class="text-center" id="spinner">
+    <div class="spinner-border" role="status">
+        
+    </div>
+   </div>
+
+    <!-- show single team detail -->
+
+    <section class="container">
+        <div id="team_details">
+
+        </div>
+
+    </section>
+
+    <!-- show team info -->
+
+    <section class="container">
+        <div id="team_container" class="card_container">
+            
+        </div>
+
+    </section>
+
+    <script src="js/sports.js"></script>
+</body>
+</html>
